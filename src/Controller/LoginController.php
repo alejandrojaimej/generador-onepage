@@ -15,7 +15,6 @@ class LoginController extends AbstractController
      */
     public function index(Request $request, SessionInterface $session)
     {
-        dump($_POST);
         $email = '';
         $pass = '';
         if(isset($_POST) && !empty($_POST)){
@@ -27,13 +26,16 @@ class LoginController extends AbstractController
                 'email' => $email,
                 'password' => $pass,
             ]);
-            $users = $repository->findAll();            
+            $users = $repository->findAll();
             if(!empty($users)){
                 $session->set('username', $email);
+                $session->set('userid', $user->getId());
                 header('Location: /admin'); exit;
             }
         }
+        //si no se envía el formulario cierro las posibles sesiones abiertas
         $session->set('username', '');
+        $session->set('userid', '');
         
 
 

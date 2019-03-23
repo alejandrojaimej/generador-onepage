@@ -3,18 +3,16 @@
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/mnt/Datos/generador-onepage/src/Controller/AdminController.php'|file_link(0) }}">src/Controller/AdminController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/mnt/Datos/generador-onepage/templates/admin/index.html.twig'|file_link(0) }}">templates/admin/index.html.twig</a></code></li>
-    </ul>
-</div>
+<form action="" method="post" enctype="multipart/form-data">
+    <table>
+        <tr><td valign="top"><label for="url">Url de destino</label></td><td><input name="url" id="url" type="text" value="{{url}}" placeholder="Url"></td></tr>
+        <tr><td valign="top"><label for="header">Título del header</label></td><td><input name="header" id="header" type="text" value="{{header}}" placeholder="Header"></td></tr>
+        <tr><td valign="top">Imagen header</td><td>{% if header_image is null %}<img src="{{default_image}}" height="150">{% else %}<img src="{{header_image}}" height="150">{% endif %}</td></tr>
+        <tr><td valign="top"><label for="img_cacebecera">Nueva imagen header</label></td><td><input name="img_cabecera" id="img_cabecera" type="file"></td></tr>
+        <tr><td valign="top"><label for="text_section_1">Texto sección 1</label></td><td><textarea name="text_section_1" id="text_section_1">{{section1}}</textarea></td></tr>
+        <tr><td valign="top"><label for="text_section_2">Texto sección 2</label></td><td><textarea name="text_section_2" id="text_section_2">{{section2}}</textarea></td></tr>
+        <tr><td valign="top"><label for="text_section_3">Texto sección 3</label></td><td><textarea name="text_section_3" id="text_section_3">{{section3}}</textarea></td></tr>
+        <tr><td></td><td><button type="submit">Guardar</button></td></tr>
+    </table>
+</form>
 {% endblock %}

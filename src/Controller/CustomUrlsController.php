@@ -17,9 +17,20 @@ use App\Entity\UsersContent;
 class CustomUrlsController extends AbstractController
 {
     /**
+     * @Route("/")
+     */
+    public function index()
+    {
+        return $this->render(
+            'home/index.html.twig', [
+            'controller_name' => 'CustomUrlsController',
+            ]
+        );
+    }
+    /**
      * @Route("/{custom_url}", name="custom_urls", requirements={"custom_url"="^(?!.*(admin|login)$).*"})
      */
-    public function index($custom_url, Request $request)
+    public function custom($custom_url, Request $request)
     {
         $entityManager = $this->getDoctrine()->getManager();
         $user_url = $entityManager->getRepository(UsersUrl::class)->findOneBy([

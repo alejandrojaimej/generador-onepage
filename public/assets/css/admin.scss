@@ -1,0 +1,74 @@
+@import './base.scss';
+
+body{
+    text-align: center;
+}
+form{
+    margin: 30px auto;
+    display: inline-block;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    background-color: rgba(255,255,255,.6);
+    box-shadow: 0 0 8px 2px rgba(0,0,0,.24);
+
+    table{
+        tr{
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+
+            td{
+                display: inline-block;
+                box-sizing: border-box;
+                text-align: left;
+
+                &:nth-child(odd){
+                    width: 35%;
+                }
+                &:nth-child(even){
+                    width: 65%;
+                }
+                label{
+                    font-size: 16px;
+                }
+
+                input, textarea{
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+
+                textarea{
+                    min-height: 70px;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Tabla responsive
+*/
+@media (max-width:500px){
+    form{
+        table{
+            tr{
+                display: block;
+                margin-bottom: 20px;
+                width: 100%;
+    
+                td{
+                    display: inline-block;
+                    box-sizing: border-box;
+    
+                    &:nth-child(odd){
+                        width: 100%;
+                    }
+                    &:nth-child(even){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

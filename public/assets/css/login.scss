@@ -1,0 +1,72 @@
+@import './base.scss'; 
+
+form{
+    position: absolute;
+    width: 300px;
+    height: 160px;
+    left: calc(50% - 150px);
+    top: calc(50% - 80px);
+    background-color: rgba(255,255,255,.3);
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #FFF;
+    border-radius: 3px;
+    input{
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        height: 35px;
+        padding-left: 10px;
+        border-radius: 3px;
+        background-color: rgb(232, 240, 254) !important;
+        border: 1px solid $primaryColor;
+        color: #333;
+        font-size: 16px;
+        box-shadow: none;
+        -webkit-appearance: textarea;
+        outline: none;
+        position: relative;
+
+        &:-webkit-autofill {
+            -webkit-text-fill-color: #333 !important;
+            -webkit-background-origin: -100px 0 !important;
+            background-color: red !important;
+            background-image: none !important;
+            box-shadow: none !important;
+            border: 0 !important;
+            opacity: 1;
+        }
+        &::placeholder {
+            text-transform: capitalize;
+            color: $primaryColor;
+            opacity: 1;
+        }
+        &::-webkit-input-placeholder {
+            text-transform: capitalize;
+            color:    $primaryColor;
+            opacity: 1;
+        }
+        &:-moz-placeholder {
+            text-transform: capitalize;
+            color:    $primaryColor;
+            opacity:  1;
+        }
+        &::-moz-placeholder {
+            text-transform: capitalize;
+            color:    $primaryColor;
+            opacity:  1;
+        }
+        &:-ms-input-placeholder {
+            text-transform: capitalize;
+            color:    $primaryColor;
+            opacity: 1;
+        }
+        &::-ms-input-placeholder {
+            text-transform: capitalize;
+            color:    $primaryColor;
+            opacity: 1;
+        }
+    }
+    
+}
+

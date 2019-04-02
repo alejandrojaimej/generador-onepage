@@ -97,7 +97,7 @@ class AdminController extends AbstractController
         /**
          * SUBIR IMAGEN DEL HEADER
          */
-        dump($_FILES);
+       // dump($_FILES);
         if(isset($_FILES['img_cabecera']) && !empty($_FILES['img_cabecera']) && $_FILES['img_cabecera']['size'] > 0){
             $image = $_FILES['img_cabecera'];
             //comprobar que las rutas de subida existen y tienen permisos
